@@ -156,6 +156,6 @@ Tami et al., "Using Multimodal LLMs for Automated Detection of Traffic Safety-Cr
 Kong et al., "WTS: A Pedestrian-Centric Traffic Video Dataset," DOI.
 Patel et al., "Multimodal Video Analysis Using LLMs for Traffic Safety and Efficiency," DOI.
 Acknowledgements
-This project was developed as part of the coursework at IIIT Delhi under the guidance of Prof.Rajiv Ratan Shah.
+This project was developed as part of the coursework at IIIT Delhi under the guidance of Prof.Rajiv Ratn Shah.
 
 
