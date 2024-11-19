@@ -79,83 +79,120 @@ The main pipeline consists of the following steps:
 
 Install the required libraries using:
 ```bash
-pip install -r requirements.txt
-Setup
-Clone the repository:
+# LLM-Based Query System for Traffic Analysis Using CCTV Footage
 
+This repository contains the implementation of an LLM-based query system designed to analyze traffic scenarios using CCTV footage. The system uses multimodal large language models (LLMs) to process and query traffic data, enabling insights into vehicle counts, accidents, and traffic patterns.
+
+---
+
+## Setup
+
+### Clone the Repository
 bash
-Copy code
 git clone https://github.com/Shubham23094/LLM-based-Query-System-for-Traffic-Analysis-Using-CCTV-Footage.git
 cd LLM-based-Query-System-for-Traffic-Analysis-Using-CCTV-Footage
-Install dependencies:
 
+
+### Install Dependencies
 bash
-Copy code
 pip install -r requirements.txt
-Download the datasets:
 
-DoTA: Download and place it in the datasets/dota directory.
-HEVI: Download and place it in the datasets/hevi directory.
-Configure paths in the notebook:
 
-Open /llava_finetune_lora_hf.ipynb and update the paths for datasets and outputs.
-Usage
-Running the Pipeline
-Open the Jupyter Notebook:
-bash
-Copy code
-jupyter notebook
-Navigate to /llava_finetune_lora_hf.ipynb and run the cells sequentially to:
-Preprocess datasets.
-Train and finetune the model using QLoRA.
-Generate inference results.
-Command Line Usage
+### Download the Datasets
+- *DoTA*: Download and place the dataset in the datasets/dota directory.
+- *HEVI*: Download and place the dataset in the datasets/hevi directory.
+
+### Configure Paths in the Notebook
+- Open /llava_finetune_lora_hf.ipynb and update the paths for the datasets and outputs.
+
+---
+
+## Usage
+
+### Running the Pipeline
+1. *Open the Jupyter Notebook:*
+   bash
+   jupyter notebook
+   
+2. **Navigate to /llava_finetune_lora_hf.ipynb** and run the cells sequentially to:
+   - Preprocess datasets.
+   - Train and finetune the model using QLoRA.
+   - Generate inference results.
+
+### Command Line Usage
 To run the finetuning script directly:
-
 bash
-Copy code
 python llava_finetune.py --data_dir ./datasets --output_dir ./llava_finetuned
-Dataset Details
-DoTA Dataset
-Accident detection dataset with 1,450 annotated videos.
-Classes: Cars, Trucks, Bikes, Bicycles, Accident/Non-Accident.
-HEVI Dataset
-High-resolution videos focusing on traffic scenarios (250 videos).
-Includes annotations for accident and non-accident cases.
-Dataset Split
-Training Set: 100 accident and 100 non-accident videos.
-Test Set: 50 accident and 50 non-accident videos.
-Evaluation Metrics
-We use the following metrics for evaluation:
 
-Accuracy
-F1 Score
-Precision and Recall
-Mean Absolute Error (MAE)
-Results
-Baseline vs Finetuned Model
-Metric	Baseline Model	Finetuned Model
-Accuracy	0.65	0.80
-MAE (Car)	4.30	2.68
-MAE (Truck)	0.90	0.72
-MAE (Bike)	0.50	0.70
-MAE (Bicycle)	0.65	0.55
-Model Deployment
+
+---
+
+## Dataset Details
+
+### DoTA Dataset
+- *Description*: Accident detection dataset with 1,450 annotated videos.
+- *Classes*: Cars, Trucks, Bikes, Bicycles, Accident/Non-Accident.
+
+### HEVI Dataset
+- *Description*: High-resolution videos focusing on traffic scenarios (250 videos).
+- *Annotations*: Includes labels for accident and non-accident cases.
+
+### Dataset Split
+- *Training Set*: 100 accident and 100 non-accident videos.
+- *Test Set*: 50 accident and 50 non-accident videos.
+
+---
+
+## Evaluation Metrics
+
+The following metrics are used to evaluate the system:
+- *Accuracy*
+- *F1 Score*
+- *Precision and Recall*
+- *Mean Absolute Error (MAE)*
+
+---
+
+## Results
+
+### Baseline vs Finetuned Model
+| Metric         | Baseline Model | Finetuned Model |
+|----------------|----------------|-----------------|
+| *Accuracy*   | 0.65           | 0.80            |
+| *MAE (Car)*  | 4.30           | 2.68            |
+| *MAE (Truck)*| 0.90           | 0.72            |
+| *MAE (Bike)* | 0.50           | 0.70            |
+| *MAE (Bicycle)*| 0.65         | 0.55            |
+
+---
+
+## Model Deployment
+
 The finetuned model is deployed as a chatbot for interactive querying. Users can query:
+- Vehicle counts.
+- Traffic accidents.
+- Time intervals with specific traffic patterns.
 
-Vehicle counts.
-Traffic accidents.
-Time intervals with specific traffic patterns.
-Future Work
-Deploy the model for real-time analysis.
-Expand the dataset for improved generalization.
-Optimize the pipeline for lower latency and scalability.
-References
-Jangam et al., "Leveraging LLMs for Video Querying," DOI.
-Tami et al., "Using Multimodal LLMs for Automated Detection of Traffic Safety-Critical Events," DOI.
-Kong et al., "WTS: A Pedestrian-Centric Traffic Video Dataset," DOI.
-Patel et al., "Multimodal Video Analysis Using LLMs for Traffic Safety and Efficiency," DOI.
-Acknowledgements
-This project was developed as part of the coursework at IIIT Delhi under the guidance of Prof.Rajiv Ratn Shah.
+---
 
+## Future Work
+
+- Deploy the model for real-time analysis.
+- Expand the dataset to improve generalization across diverse scenarios.
+- Optimize the pipeline for lower latency and scalability.
+
+---
+
+## References
+
+1. *Jangam et al.*, "Leveraging LLMs for Video Querying," DOI.
+2. *Tami et al.*, "Using Multimodal LLMs for Automated Detection of Traffic Safety-Critical Events," DOI.
+3. *Kong et al.*, "WTS: A Pedestrian-Centric Traffic Video Dataset," DOI.
+4. *Patel et al.*, "Multimodal Video Analysis Using LLMs for Traffic Safety and Efficiency," DOI.
+
+---
+
+## Acknowledgements
+
+This project was developed as part of the coursework at IIIT Delhi under the guidance of *Prof. Rajiv Ratn Shah*.
 
